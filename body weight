@@ -1,0 +1,27 @@
+def calculate_bmi(weight, height):
+    height_in_meters = height / 100  # Convert height from cm to meters
+    bmi = weight / (height_in_meters ** 2)
+    return bmi
+
+def weight_menu():
+    print("Welcome to the Body Weight Menu Program!")
+    print("Please enter your weight in kilograms:")
+    weight = float(input())
+
+    print("Please enter your height in centimeters:")
+    height = float(input())
+
+    bmi = calculate_bmi(weight, height)
+    print("Your Body Mass Index (BMI) is:", round(bmi, 2))
+
+    if bmi < 18.5:
+        print("You are underweight. It is recommended to consult with a healthcare professional.")
+    elif bmi >= 18.5 and bmi < 24.9:
+        print("Your weight is within the normal range.")
+    elif bmi >= 24.9 and bmi < 29.9:
+        print("You are overweight. Consider implementing a balanced diet and regular exercise.")
+    else:
+        print("You are in the obese range. It is advisable to seek guidance from a healthcare professional.")
+
+# Run the weight menu program
+weight_menu()
